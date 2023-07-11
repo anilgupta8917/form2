@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <h2>Registration Form</h2>
+
+  <form id="registrationForm">
+    <label for="name">Name:</label>
+    <input type="text" id="name" required>
+    <span id="nameError" class="error"></span>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" required>
+    <span id="emailError" class="error"></span>
+
+    <label for="phone">Phone Number:</label>
+    <input type="tel" id="phone" required>
+    <span id="phoneError" class="error"></span>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" required>
+    <span id="passwordError" class="error"></span>
+
+    <label for="age">Age:</label>
+    <input type="number" id="age" required>
+    <span id="ageError" class="error"></span>
+
+    <label for="gender">Gender:</label>
+    <select id="gender" required>
+      <option value="">Select</option>
+      <option value="male">Male</option>
+      <option value="female">Female</option>
+      <option value="other">Other</option>
+    </select>
+    <span id="genderError" class="error"></span>
+
+    <label for="date">Date:</label>
+    <input type="date" id="date" required>
+    <span id="dateError" class="error"></span>
+
+    <label for="color">Favorite Color:</label>
+    <input type="color" id="color" required>
+    <span id="colorError" class="error"></span>
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      var form = document.getElementById("registrationForm");
+
+      form.addEventListener("submit", function(event) {
+        event.preventDefault();
+        if (validateForm()) {
+          alert("Form submitted successfully!");
+          form.reset();
+        }
+      });
+
+      function validateForm() {
+        var name = document.getElementById("name");
+        var email = document.getElementById("email");
+        var phone = document.getElementById("phone");
+        var password = document.getElementById("password");
+        var age = document.getElementById("age");
